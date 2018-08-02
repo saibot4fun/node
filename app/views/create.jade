@@ -1,0 +1,15 @@
+include ./layouts/header.jade
+div
+  button#submit.btn.btn-primary(name='submit' data-toggle="modal" data-target="#myModal") Create new Table
+  table
+    thead
+      tr: th Tables Modules      
+    tbody
+      each table, i in tables
+        tr
+          td 
+            a.btn.btn-info(href='/create/post/' + table.TABLE_NAME)  #{table.TABLE_NAME}
+            
+            
+            
+include ./layouts/footer.jade

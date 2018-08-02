@@ -1,0 +1,40 @@
+include ./layouts/header.jade
+div
+  table
+    thead
+      tr: th Table #{title}  
+    tbody
+      h3.Title!= message
+        form(id="createNew", name="createNew", action="createNew", method="post")
+          input(
+            type="text",
+            name="username",
+            placeholder="Username"
+          ).form-control
+          input(
+            type="email",
+            name="email",
+            placeholder="Email address"
+          ).form-control
+          input(
+            type="password",
+            name="password",
+            placeholder="Password"
+          ).form-control
+          input(
+            type="submit",
+            class="btn btn-primary form-control",
+            value="Sign up"
+          )
+      each table, i in result
+        tr
+          td 
+          
+            a.btn.btn-info(href='/create/post/' + table.Field)  #{table.Field}
+        
+        
+      
+            
+  button#submit.btn.btn-primary(name='submit' data-toggle="modal" data-target="#myModal") Generate
+            
+include ./layouts/footer.jade
