@@ -10,7 +10,7 @@ A Node.js, Express, MySQL, Passport, Jade starter kit.
 
 ## Installation
 
-    git clone https://github.com/jkup/hammer.git
+    git clone https://github.com/saibot4fun/node
     cd hammer
     npm install
 
@@ -50,6 +50,9 @@ Now you can edit app/config/routes/default-routes.js and replace the title and m
 Now just run:
 
     npm start
+    localhost:3000
+    login   
+    Display/Use Create Module
 
 And off you go!
 
