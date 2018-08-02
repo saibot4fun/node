@@ -11,7 +11,7 @@ A Node.js, Express, MySQL, Passport, Jade starter kit.
 ## Installation
 
     git clone https://github.com/saibot4fun/node
-    cd hammer
+    cd node
     npm install
 
 ### MySQL
