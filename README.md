@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/jkup/hammer.svg?branch=master)](https://travis-ci.org/jkup/hammer)
 
-# Hammer
+# Hammer / More Generator Routes And Views 
 
 A Node.js, Express, MySQL, Passport, Jade starter kit.
 
