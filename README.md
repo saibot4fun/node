@@ -2,7 +2,7 @@
 
 # Hammer / More Generator Routes And Views 
 
-A Node.js, Express, MySQL, Passport, Jade starter kit.
+A Node.js, Express, MySQL, Passport, Jade starter kit, more generator crud 
 
 ## Screenshot
 
