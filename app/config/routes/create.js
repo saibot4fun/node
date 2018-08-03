@@ -47,6 +47,7 @@ module.exports = function(app) {
                       stream.write("                res.render('"+req.params['name']+"_list', \n");
                       stream.write("                { \n");
                       stream.write("                    title: req.params['name'],\n");
+                      stream.write("                    userName: req.user.username,\n");
                       stream.write("                    message: 'Module Create "+req.params['name']+"', \n");
                       stream.write("                    flashMessage: req.flash('flashMessage'),\n");
                       stream.write("                    results: rows\n");
@@ -76,21 +77,18 @@ module.exports = function(app) {
                       var parametros    = "[";
                       var pkName        = "";
                       for(var i=0; i< rows.length;i++)
-                      {
-                        
+                      {                        
                         if(rows[i]['Key'] != "PRI")
                         {
                             sql         += rows[i]['Field']+",";
                             parametros  += "req.body."+rows[i]['Field']+",";
-                            //sqlEdit     +=  rows[i]['Field']+" = '+req.params['"+rows[i]['Field']+"']+',";
                             sqlEdit     +=  rows[i]['Field']+" = ?,";
                         }
                         else if(rows[i]['Key'] == "PRI")
                         {
                             pkName      = rows[i]['Field'];
                             pkNameParam = "req.params['"+rows[i]['Field']+"'],";
-                        }
-                        
+                        }                        
                       }
                       var parametros2   = parametros.substr(0,(parametros.length - 1));
                       parametros2       = parametros2+']';
@@ -116,7 +114,8 @@ module.exports = function(app) {
                       stream.write("                res.render('"+req.params['name']+"_list', \n");
                       stream.write("                { \n");
                       stream.write("                    title: req.params['name'],\n");
-                      stream.write("                    message: 'Inserido com sucesso!', \n");                      
+                      stream.write("                    message: 'Inserido com sucesso!', \n");     
+                      stream.write("                    userName: req.user.username,\n");                 
                       stream.write("                    results: rows2, \n");
                       stream.write("                    flashMessage: req.flash('flashMessage')\n");                    
                       stream.write("                });\n");                    
@@ -147,6 +146,7 @@ module.exports = function(app) {
                       stream.write("                { \n");
                       stream.write("                    title: req.params['name'],\n");
                       stream.write("                    message: 'Editado com sucesso' , \n");
+                      stream.write("                    userName: req.user.username,\n");
                       stream.write("                    results: rows2, \n");
                       stream.write("                    flashMessage: req.flash('flashMessage')\n");                    
                       stream.write("                });\n");     
@@ -172,6 +172,7 @@ module.exports = function(app) {
                       stream.write("                res.render('"+req.params['name']+"_add', \n");
                       stream.write("                { \n");
                       stream.write("                    title: req.params['name'],\n");
+                      stream.write("                    userName: req.user.username,\n");
                       stream.write("                    message: 'Editar"+req.params['name']+"', \n");
                       stream.write("                    flashMessage: req.flash('flashMessage')\n");                    
                       stream.write("                });\n");                    
@@ -195,7 +196,8 @@ module.exports = function(app) {
                       stream.write("                { \n");
                       stream.write("                    title: req.params['name'],\n");
                       stream.write("                    message: 'Adicionar "+req.params['name']+"', \n");                       
-                      stream.write("                    action: '/"+req.params['name']+"/add', \n");                     
+                      stream.write("                    action: '/"+req.params['name']+"/add', \n");  
+                      stream.write("                    userName: req.user.username,\n");                   
                       stream.write("                    method: 'POST', \n");
                       stream.write("                    flashMessage: req.flash('flashMessage')\n");                    
                       stream.write("                });\n");                              
@@ -222,6 +224,7 @@ module.exports = function(app) {
                       stream.write("                    message: 'Module Create "+req.params['name']+"', \n");                                           
                       stream.write("                    action: '/"+req.params['name']+"/'+req.params['id']+'/save', \n");  
                       stream.write("                    results: rows[0], \n");  
+                      stream.write("                    userName: req.user.username,\n");
                       stream.write("                    method: 'POST', \n");
                       stream.write("                    flashMessage: req.flash('flashMessage')\n");                    
                       stream.write("                });\n");                    
@@ -246,6 +249,7 @@ module.exports = function(app) {
                       stream.write("                res.render('"+req.params['name']+"_add', \n");
                       stream.write("                { \n");
                       stream.write("                    title: req.params['name'],\n");
+                      stream.write("                    userName: req.user.username,\n");
                       stream.write("                    message: 'Module Create "+req.params['name']+"', \n");                                                                 
                       stream.write("                    action: '/"+req.params['name']+"/'+req.params['id'], \n");  
                       stream.write("                    method: 'POST', \n");
@@ -276,6 +280,7 @@ module.exports = function(app) {
                       stream.write("                res.render('"+req.params['name']+"_list', \n");
                       stream.write("                { \n");
                       stream.write("                    title: req.params['name'],\n");
+                      stream.write("                    userName: req.user.username,\n");
                       stream.write("                    message: 'Module Create "+req.params['name']+"', \n");                                        
                       stream.write("                    results: rows2, \n");
                       stream.write("                    flashMessage: req.flash('flashMessage')\n");                    
@@ -320,6 +325,7 @@ module.exports = function(app) {
                       stream.write("                res.render('"+req.params['name']+"_list', \n");
                       stream.write("                { \n");
                       stream.write("                    title: req.params['name'],\n");
+                      stream.write("                    userName: req.user.username,\n");
                       stream.write("                    message: 'Module Create "+req.params['name']+"', \n");
                       stream.write("                    flashMessage: req.flash('flashMessage'),\n");
                       stream.write("                    results: rows\n");
