@@ -131,8 +131,7 @@ module.exports = function(app) {
                       stream.write("                    flashMessage: req.flash('flashMessage')\n");
                       stream.write("            });\n");                                              
                       stream.write("     }\n");
-                      stream.write("     });\n");
-                         
+                      stream.write("     });\n");                         
                      /**
                             EDITAR
                      */ 
@@ -162,9 +161,7 @@ module.exports = function(app) {
                       stream.write("                    flashMessage: req.flash('flashMessage')\n");
                       stream.write("            });\n");                                              
                       stream.write("     }\n");
-                      stream.write("     });\n"); 
-                      
-                        
+                      stream.write("     });\n");
                       stream.write("    app.post('/"+req.params['name']+"/:id', function(req, res,next) \n");                      
                       stream.write("    {\n");
                       stream.write("      if(req.isAuthenticated()) \n");
@@ -188,8 +185,7 @@ module.exports = function(app) {
                       stream.write("                    flashMessage: req.flash('flashMessage')\n");
                       stream.write("            });\n");                                              
                       stream.write("     }\n");
-                      stream.write("     });\n");
-                      
+                      stream.write("     });\n");                      
                       stream.write("    app.get('/"+req.params['name']+"/add', function(req, res,next) \n");                      
                       stream.write("    {\n");
                       stream.write("      if(req.isAuthenticated()) \n");
@@ -212,8 +208,7 @@ module.exports = function(app) {
                       stream.write("                    flashMessage: req.flash('flashMessage')\n");
                       stream.write("            });\n");                                              
                       stream.write("     }\n");
-                      stream.write("     });\n");
-                      
+                      stream.write("     });\n");                      
                       stream.write("    app.get('/"+req.params['name']+"/edit/:id', function(req, res,next) \n");                      
                       stream.write("    {\n");
                       stream.write("      if(req.isAuthenticated()) \n");
@@ -241,8 +236,6 @@ module.exports = function(app) {
                       stream.write("            });\n");                                              
                       stream.write("     }\n");
                       stream.write("     });\n");
-                      
-                      
                       stream.write("    app.get('/"+req.params['name']+"/view/:id', function(req, res,next) \n");                      
                       stream.write("    {\n");
                       stream.write("      if(req.isAuthenticated()) \n");
@@ -298,8 +291,7 @@ module.exports = function(app) {
                       stream.write("                    flashMessage: req.flash('flashMessage')\n");
                       stream.write("            });\n");                                              
                       stream.write("     }\n");
-                      stream.write("     });\n");  
-                     
+                      stream.write("     });\n");                   
                    
                     /**
                         BUSCAR                                       
@@ -341,10 +333,7 @@ module.exports = function(app) {
                       stream.write("                    message: 'Error', \n");
                       stream.write("                    flashMessage: req.flash('flashMessage')\n");
                       stream.write("                });\n");                                              
-                      stream.write("     }});\n");
-                      
-                      
-                      
+                      stream.write("     }});\n");                      
                       stream.write("}\n");
                       stream.end();
                       
@@ -356,8 +345,7 @@ module.exports = function(app) {
                     var stream2 = fs.createWriteStream("app/views/"+req.params['name']+"_list.jade");
                     stream2.once('open', function(fd) 
                     {
-                         stream2.write("include ./layouts/header.jade \n");
-                         
+                         stream2.write("include ./layouts/header.jade \n");                         
                          stream2.write("div.container-fluid.page-wrap\n");
                          stream2.write(" div.row\n");
                          stream2.write("   div.col-md-1.col-md-offset-1\n");                                    
@@ -399,8 +387,6 @@ module.exports = function(app) {
                          stream2.write("                              | \n"); 
                          stream2.write("                            a(href=\"/"+req.params['name']+"/delete/\"+v."+pkName+") Delete \n"); 
                          stream2.write("                - }); \n"); 
-                         
-                         
                          stream2.write("include ./layouts/footer.jade");  
                          stream2.end();
                     });  
