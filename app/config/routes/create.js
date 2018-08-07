@@ -1,3 +1,6 @@
+  /**
+   * Roberto Tobias Zikert Dalchau
+  **/
 const passport = require('passport');
 const connection    = require('../connection.js');
 
