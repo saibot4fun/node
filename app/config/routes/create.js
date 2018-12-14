@@ -356,7 +356,7 @@ module.exports = function(app) {
                          stream2.write("include ./layouts/header.jade \n");                         
                          stream2.write("div.container-fluid.page-wrap\n");
                          stream2.write(" div.row\n");
-                         stream2.write("   div.col-md-1.col-md-offset-1\n");                                    
+                         stream2.write("   div.col-md-"+rows.length+".col-md-offset-1\n");                                    
                          stream2.write("            h1= title\n");
                          stream2.write("            p=JSON.stringify(flashmsg)\n");
                          stream2.write("            p\n");
