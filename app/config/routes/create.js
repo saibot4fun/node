@@ -1,17 +1,16 @@
   /**
    * Roberto Tobias Zikert Dalchau
   **/
-const passport = require('passport');
+const passport      = require('passport');
 const connection    = require('../connection.js');
 
 module.exports = function(app) {
   
   app.get('/create/post/:name', function(req, res,next) 
   {
-
         if(req.isAuthenticated())
         {
-             connection.query('SHOW COLUMNS FROM '+req.params['name']+'',
+                  connection.query('SHOW COLUMNS FROM '+req.params['name']+'',
                   function(err, rows) 
                   {
                     
@@ -450,14 +449,31 @@ module.exports = function(app) {
                         stream3.end();      
 
                     });
-                    //fs.createWriteStream("app/views/"+req.params['name']+"_add.jade");
-                    //fs.readFile("app/views/"+req.params['name']+"_add.jade", function(err, data) {
-                    //console.log(data);
-                    //});
-                    res.render('create_view', 
+                   var dataC ;
+                 //   var fs = require('fs');
+                    try {  
+                        var data = fs.readFileSync("./app/config/routes/routes.js", 'utf8');
+                        dataC =  data.toString().replace("}", "  require('./"+req.params['name']+"')(app); \n}");
+                       
+                        
+                    } catch(e) {
+                        console.log('ErrorAEAE:', e.stack);
+                    }
+                        console.log(dataC);
+                        fs.writeFile("./app/config/routes/routes.js", dataC, function(err) {
+                            if(err) {
+                                return console.log(err);
+                            }
+                        
+                            console.log("The file was saved!");
+                        }); 
+                    res.render('created_view', 
                     {
                       title: req.params['name'],
                       message: 'Sucesso Modulo Criado '+req.params['name'],
+                      message_routejs: " Add in routes.js  - Ok",
+                      message_routes : " Routes            - OK",
+                      message_views  : " Views             - Ok",                      
                       flashMessage: req.flash('flashMessage'),
                       result: rows
                     });
@@ -478,7 +494,6 @@ module.exports = function(app) {
     }
     
   });
-
   /**
    * Display Tables
   **/
