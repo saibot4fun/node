@@ -76,3 +76,6 @@ Hammer makes use of a lot of open source libraries. They are probably your best 
 + [bcrypt](https://www.npmjs.com/package/bcryptjs)
 + [Bootstrap](http://getbootstrap.com/)
 "# node" 
+
+
+original repository : https://github.com/jkup/hammer
