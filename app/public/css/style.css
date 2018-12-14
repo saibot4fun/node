@@ -34,3 +34,25 @@ input[type="email"],
 input[type="password"] {
   margin-bottom: 25px;
 }
+.col-md-1 col-md-offset-1{
+	width:100%;
+
+}
+table{
+	width:90%;
+}
+th{
+	background-color:black;
+	color:white;
+}
+/*css global tabela*/
+table{width: 200px;border-collapse: collapse;}
+
+/*colocando bordas nas linhas*/
+table tr{border:1px black solid;}
+
+/*Definido cor das linhas pares*/
+table tr:nth-child(even) {background: #FFF}
+
+/*Definindo cor das Linhas impáres*/
+table tr:nth-child(odd) {background: #EEE}  
