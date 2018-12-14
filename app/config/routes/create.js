@@ -449,24 +449,35 @@ module.exports = function(app) {
                         stream3.end();      
 
                     });
-                   var dataC ;
-                 //   var fs = require('fs');
+                    //adiciona rota no routes.js
+                    var dataC ;
                     try {  
-                        var data = fs.readFileSync("./app/config/routes/routes.js", 'utf8');
+                        var data = fs.readFileSync("./app/config/routes/routes.js");
                         dataC =  data.toString().replace("}", "  require('./"+req.params['name']+"')(app); \n}");
                        
                         
                     } catch(e) {
-                        console.log('ErrorAEAE:', e.stack);
+                        console.log('Error:', e.stack);
                     }
-                        console.log(dataC);
-                        fs.writeFile("./app/config/routes/routes.js", dataC, function(err) {
-                            if(err) {
-                                return console.log(err);
-                            }
-                        
-                            console.log("The file was saved!");
-                        }); 
+                   
+                    fs.writeFile("./app/config/routes/routes.js", dataC, function(err) {
+                        if(err) {
+                            return console.log(err);
+                        }
+                    }); 
+                    //adiciona menu
+                    var dataC ;
+                    try {  
+                        var data = fs.readFileSync("./app/views/layouts/header.jade");
+                        dataC =  data.toString().replace("if userName", "if userName \n              li\n                a(href=\"/"+req.params['name']+"\")=  '"+req.params['name']+"'");                       
+                    } catch(e) {
+                        console.log('Error:', e.stack);
+                    }
+                    fs.writeFile("./app/views/layouts/header.jade", dataC, function(err) {
+                        if(err) {
+                            return console.log(err);
+                        }
+                    }); 
                     res.render('created_view', 
                     {
                       title: req.params['name'],
