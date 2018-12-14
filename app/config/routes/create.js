@@ -365,8 +365,8 @@ module.exports = function(app) {
                          stream2.write("                input( \n");
                          stream2.write("                    type=\"text\",\n");
                          stream2.write("                    name=\"search\",\n");
-                         stream2.write("                    placeholder=\"search\",\n");
-                         stream2.write("                    value=\"search\"\n");                         
+                         stream2.write("                    placeholder=\"search\"\n");
+                //         stream2.write("                    value=\"search\"\n");                         
                          stream2.write("                )\n");
                          stream2.write("                input( \n");
                          stream2.write("                    type=\"submit\",\n");
