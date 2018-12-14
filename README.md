@@ -7,6 +7,7 @@ A Node.js, Express, MySQL, Passport, Jade starter kit, more generator crud
 ## Screenshot
 
 ![Hammer Homepage Screenshot](/hammer_screenshot.png "Hammer Screenshot")
+![Hammer Homepage Screenshot](/hammer_screenshot_plugin.png "Hammer Screenshot Plugin")
 
 ## Installation
 
