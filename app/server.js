@@ -8,8 +8,8 @@ const app           = express();
 require('./config/passport/passport');
 
 app.set('view engine', 'jade');
-app.set('views', '../app/views');
-app.use(express.static('../app/public'));
+app.set('views', './app/views');
+app.use(express.static('./app/public'));
 app.use(require('cookie-parser')());
 app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(require('express-session')({ secret: 'n0d3castz secret cat key', resave: false, saveUninitialized: false }));
