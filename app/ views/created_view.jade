@@ -1,0 +1,19 @@
+include ./layouts/header.jade
+div
+  table
+    thead
+      tr: th Table #{title}  
+    tbody
+      h3.Title!= message
+        form(id="createNew", name="create", action="createNew", method="post")
+      h3.Title!= message_routes
+      h3.Title!= message_views 
+      h3.Title!= message_routejs
+      each table, i in result
+        tr
+          td           
+            a.btn.btn-info(href='/create/post/' + table.Field)  #{table.Field}
+        
+  a#btn.btn-primary(href='/create') Back
+            
+include ./layouts/footer.jade
