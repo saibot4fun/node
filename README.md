@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/jkup/hammer.svg?branch=master)](https://travis-ci.org/jkup/hammer)
 
-# Hammer / (THOR) More Generator Routes And Views 
+# Hammer / (THOR) Generator Routes And Views 
 
 A Node.js, Express, MySQL, Passport, Jade starter kit, more generator crud 
 
@@ -50,7 +50,7 @@ Now you can edit app/config/routes/default-routes.js and replace the title and m
 Now just run:
 
     npm start
-    localhost:3000
+    http://localhost:3000
     login   
     Display/Use Create Module
 
