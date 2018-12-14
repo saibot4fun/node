@@ -53,6 +53,7 @@ Now just run:
     http://localhost:3000
     login   
     Display/Use Create Module
+    and restart npm
 
 And off you go!
 
